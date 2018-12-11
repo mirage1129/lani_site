@@ -5,7 +5,7 @@
 	b. Set up Digital Ocean server
 		i. Initial server setup (do all steps - refer to note below)
 			- https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
-			- NOTE: After you're done with the guide, open port 8080 with the command `sudo ufw allow 8080` so you can test the deployment. (Port 4000 won't work for outside connections because Cloudflare only supports certain port numbers on HTTP and HTTPs)
+			- NOTE: After you're done with the guide, open port 4000 with the command `sudo ufw allow 4000` so you can test the deployment later.
 		ii. Install Nginx (do all steps)
 			- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04
 		iii. Create server blocks (do all steps)
@@ -15,7 +15,7 @@
 			- NOTE:In step 4, choose option 2, Redirect. This will provide automatic redirects to HTTPS on the production server we're creating in this tutorial.
 			- NOTE: After you are done with this guide, change Cloudflare's Crypto SSL setting to Full
 	c. Automate deployment
-		i. Install Elixir/Phoenix on server, configure SSH, and Create test project (do steps 2-4 - refer to note below)
+		i. Install Elixir/Phoenix on server, configure SSH, and create test project (do steps 2-4 - refer to note below)
 			- https://www.digitalocean.com/community/tutorials/how-to-automate-elixir-phoenix-deployment-with-distillery-and-edeliver-on-ubuntu-16-04
 			- NOTE: In step 4, replace `mix phx.new --no-ecto --no-brunch myproject` with `mix phx.new myproject`
 		ii. Install Nodejs and Postgres (do steps 6 & 7 - refer to note below)
@@ -27,7 +27,6 @@
 			- Type `sudo apt-get install build-essential` in server command line
 		iii. Configure Distillery and eDeliver (do steps 5-9 - refer to note below)
 			- https://www.digitalocean.com/community/tutorials/how-to-automate-elixir-phoenix-deployment-with-distillery-and-edeliver-on-ubuntu-16-04
-			- NOTE: In step 5, change the port in your app config/prod to 8080 (cloudflare doesnt support 4000, so when you later test, it wont work if you leave on 4000)
 			- NOTE: In step 5, when you copy prod.secret to your server change `example.com:/home...` to `deploy@example.com:home...`
 			- NOTE: In step 5, after you copy prod.secret, change it to what you see here in step 8 with the database username/password that noted down from a few steps before. https://devato.com/automate-elixir-phoenix-1-4-deployment-with-distillery-and-edeliver-on-ubuntu/
 			- NOTE: In step 5, use the latest eDeliver dependency that you'll find here https://github.com/edeliver/edeliver
