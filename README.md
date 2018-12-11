@@ -10,7 +10,7 @@
 			- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04
 		iii. Create server blocks (do all steps)
 			- https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
-		iii. Secure Nginx with SSL certificate (do all steps - refer to note below)
+		iv. Secure Nginx with SSL certificate (do all steps - refer to note below)
 			- https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04
 			- NOTE:In step 4, choose option 2, Redirect. This will provide automatic redirects to HTTPS on the production server we're creating in this tutorial.
 			- NOTE: After you are done with this guide, change Cloudflare's Crypto SSL setting to Full
@@ -25,7 +25,7 @@
 			- NOTE: Note down the username and password of your db user, you will have to use it when you copy prod.secret to the server later.
 		iii. Install build-essential package 
 			- Type `sudo apt-get install build-essential` in server command line
-		iii. Configure Distillery and eDeliver (do steps 5-9 - refer to note below)
+		iv. Configure Distillery and eDeliver (do steps 5-9 - refer to note below)
 			- https://www.digitalocean.com/community/tutorials/how-to-automate-elixir-phoenix-deployment-with-distillery-and-edeliver-on-ubuntu-16-04
 			- NOTE: In step 5, when you copy prod.secret to your server change `example.com:/home...` to `deploy@example.com:home...`
 			- NOTE: In step 5, after you copy prod.secret, change it to what you see here in step 8 with the database username/password that noted down from a few steps before. https://devato.com/automate-elixir-phoenix-1-4-deployment-with-distillery-and-edeliver-on-ubuntu/
@@ -37,6 +37,14 @@
 		i. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/7
 	b. Add Bulma/Bulma Extensions/Animate.css
 		ii. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/20
+	c. Set versions to Auto bump 
+
+		The build upgrade has the same version as the installed version.
+That release cannot be deployed as an upgrade. Alter the release version
+or consider using the --auto-version=revision|commit-count|date option
+to automatically increment the version or append the git revision.
+It is recommended to enable the git-auto-revision permanently
+for automatic upgrades by setting AUTO_VERSION=revision in the config.
 
 
 References
