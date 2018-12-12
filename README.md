@@ -37,8 +37,6 @@
 		i. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/7
 	b. Add Bulma/Bulma Extensions/Animate.css
 		i. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/20
-	c. Set versions to Auto bump 
-		i. add `AUTO_VERSION=commit-count+git-revision+branch-unless-master` to the .deliver/config
 		
 
 
