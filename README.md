@@ -36,15 +36,10 @@
 	a. Change CSS to SCSS
 		i. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/7
 	b. Add Bulma/Bulma Extensions/Animate.css
-		ii. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/20
+		i. https://elixirforum.com/t/phoenix-1-4-webpack-4-and-bulma-bootstrap-4-sass/14354/20
 	c. Set versions to Auto bump 
-
-		The build upgrade has the same version as the installed version.
-That release cannot be deployed as an upgrade. Alter the release version
-or consider using the --auto-version=revision|commit-count|date option
-to automatically increment the version or append the git revision.
-It is recommended to enable the git-auto-revision permanently
-for automatic upgrades by setting AUTO_VERSION=revision in the config.
+		i. add `AUTO_VERSION=commit-count+git-revision+branch-unless-master` to the .deliver/config
+		
 
 
 References

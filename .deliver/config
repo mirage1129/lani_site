@@ -1,5 +1,7 @@
 APP="lani"
 
+AUTO_VERSION=commit-count+git-revision+branch-unless-master
+
 BUILD_HOST="kunvince.com"
 BUILD_USER="deploy"
 BUILD_AT="/home/deploy/app_build"
