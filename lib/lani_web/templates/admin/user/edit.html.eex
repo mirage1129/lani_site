@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Edit Priviliges</h1>
+    <ul>
+		  <li>
+		    <strong>Name:</strong>
+		    <%= @user.name %>
+		  </li>
+		    <%= render "priviliges.html", Map.put(assigns, :action, Routes.admin_user_path(@conn, :update, @user)) %>
+		</ul> 
+  </div>
+</section>
+
+

@@ -1,0 +1,15 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">User</h1>
+    <ul>
+		  <li>
+		    <strong>Name:</strong>
+		    <%= @user.name %>
+		  </li>
+		  <li>
+		    <strong>Privilages:</strong>
+		    <%= @user.role %>
+		  </li>
+		</ul>
+  </div>
+</section>

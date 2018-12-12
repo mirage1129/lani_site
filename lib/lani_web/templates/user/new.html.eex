@@ -1,0 +1,10 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Register</h1>
+    <div class="columns">
+		  <div class="column is-4">
+		    <%= render "form.html", Map.put(assigns, :action, Routes.user_path(@conn, :create)) %>
+		  </div>
+		</div>
+  </div>
+</section>

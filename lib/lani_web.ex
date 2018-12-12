@@ -23,6 +23,7 @@ defmodule LaniWeb do
 
       import Plug.Conn
       import LaniWeb.Gettext
+      import LaniWeb.Auth, only: [authenticate_admin: 2, authenticate_editor: 2]
       alias LaniWeb.Router.Helpers, as: Routes
     end
   end
@@ -50,6 +51,7 @@ defmodule LaniWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import LaniWeb.Auth, only: [authenticate_admin: 2, authenticate_editor: 2]
     end
   end
 
