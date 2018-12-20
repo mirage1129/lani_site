@@ -31,6 +31,8 @@
 			- NOTE: In step 5, after you copy prod.secret, change it to what you see here in step 8 with the database username/password that noted down from a few steps before. https://devato.com/automate-elixir-phoenix-1-4-deployment-with-distillery-and-edeliver-on-ubuntu/
 			- NOTE: In step 5, use the latest eDeliver dependency that you'll find here https://github.com/edeliver/edeliver
 			- NOTE: In step 6, below the `pre_erlang_get_and_update_deps` function, add the `pre_erlang_clean_compile()` function that you'll find in here https://devato.com/automate-elixir-phoenix-1-4-deployment-with-distillery-and-edeliver-on-ubuntu/
+		v. Migrate your database
+			- Type `mix edeliver migrate production` to migrate the database on the production server.
 
 2. Add front-end dependencies
 	a. Change CSS to SCSS
