@@ -1,16 +1,16 @@
 APP="lani"
 
-BUILD_HOST="kunvince.com"
-BUILD_USER="deploy"
-BUILD_AT="/home/deploy/app_build"
+BUILD_HOST="angleangel.com"
+BUILD_USER="aadeploy"
+BUILD_AT="/home/aadeploy/app_build"
 
-PRODUCTION_HOSTS="kunvince.com" 
-PRODUCTION_USER="deploy" 
-DELIVER_TO="/home/deploy/app_release" 
+PRODUCTION_HOSTS="angleangel.com" 
+PRODUCTION_USER="aadeploy" 
+DELIVER_TO="/home/aadeploy/app_release" 
 
 
 pre_erlang_get_and_update_deps() {
-  local _prod_secret_path="/home/deploy/app_config/prod.secret.exs"
+  local _prod_secret_path="/home/aadeploy/app_config/prod.secret.exs"
   if [ "$TARGET_MIX_ENV" = "prod" ]; then
     __sync_remote "
       ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'

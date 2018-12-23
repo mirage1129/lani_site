@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :lani, LaniWeb.Endpoint,
   http: [port: 4000],
-  url: [host: "kunvince.com", port: 80],
+  url: [host: "angleangel.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json",
   server: true,
   code_reloader: false
