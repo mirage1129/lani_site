@@ -12,20 +12,15 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
         <%= link "Guides", to: Routes.guide_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold" %>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link "About", to: Routes.page_path(@conn, :show), class: "navbar-item has-text-primary has-text-weight-bold" %>
           <div class="navbar-dropdown">
-             <%= link "Our Story", to: Routes.page_path(@conn, :show), class: "navbar-item" %>
-            </a>
-            <a class="navbar-item" href="https://www.facebook.com/whoislani/">
-              Facebook
-            </a>
-            <a class="navbar-item" href="https://www.instagram.com/wh0islani/">
-              Instagram
-            </a>
+             <%= link "Our Story", to: Routes.page_path(@conn, :show), class: "navbar-item has-text-primary has-text-weight-bold" %>
+             <%= link "Facebook", to: "https://www.facebook.com/whoislani/", class: "navbar-item has-text-primary has-text-weight-bold" %>
+             <%= link "Instagram", to: "https://www.instagram.com/wh0islani/", class: "navbar-item has-text-primary has-text-weight-bold" %>
           </div>
         </div>
 
@@ -41,22 +36,16 @@
       <%= if @current_user do %>
 
         <div class="navbar-end">
-          <div class="navbar-item">
-            <%= link @current_user.name, to: Routes.user_path(@conn, :show, @current_user), class: "navbar-item has-text-primary has-text-weight-bold" %>
-          </div>
-          <div class="navbar-item has-text-primary has-text-weight-bold">
-            <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
+          <%= link @current_user.name, to: Routes.user_path(@conn, :show, @current_user), class: "navbar-item has-text-primary has-text-weight-bold" %>
+            <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete", class: "navbar-item has-text-primary has-text-weight-bold" %>
           </div>
         </div>
     
       <% else %>
-          <div class="navbar-end">
-          <div class="navbar-item">
-            <%= link "Register", to: Routes.user_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
-          </div>
-          <div class="navbar-item">
-            <%= link "Log in", to: Routes.session_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
-          </div>
+        <div class="navbar-end">
+          <%= link "Register", to: Routes.user_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
+          <%= link "Log in", to: Routes.session_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
+        </div>
       <% end %>
     </div>    
   </nav> 
