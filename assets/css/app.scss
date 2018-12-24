@@ -20,6 +20,11 @@ $header-family:Baumans;
     2px -2px 0 #22D0B2,
     -2px 2px 0 #22D0B2,
     2px 2px 0 #22D0B2;
+  display: inline;
+}
+
+.picture-subtitle {
+  font-size: 3rem;
 }
 
 #toast {
@@ -38,4 +43,16 @@ $header-family:Baumans;
 
 .logo {
   margin-right: 10px;
+}
+
+
+@media (max-width: 768px) { /* Mobile devices */
+  .picture-title {
+    font-size: 80px;
+
+  }
+
+  .picture-subtitle {
+    font-size: 30px;
+  }
 }

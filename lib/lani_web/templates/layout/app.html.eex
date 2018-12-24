@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Lani!</title>
+    <title>Lani</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
