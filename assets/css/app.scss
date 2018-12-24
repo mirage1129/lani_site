@@ -52,15 +52,9 @@ $header-family:Baumans;
   font-size: 3rem;
 }
 
-// .map {
-//   width: 640px;
-//   height 480px;
-// }
-
 @media (max-width: 768px) { /* Mobile devices */
   .picture-title {
-    font-size: 74px;
-
+    font-size: 70px;
   }
 
   .picture-subtitle {
@@ -70,5 +64,9 @@ $header-family:Baumans;
   .guide-description {
   font-size: 1rem;
 }
+  
+  .guide-title {
+    font-size: 52px;
+  }
 
 }
