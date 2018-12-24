@@ -13,20 +13,6 @@ $header-family:Baumans;
   font-weight: 700;
 }
 
-.picture-title {
-	font-size: 120px;
-  text-shadow:
-    -2px -2px 0 #22D0B2,
-    2px -2px 0 #22D0B2,
-    -2px 2px 0 #22D0B2,
-    2px 2px 0 #22D0B2;
-  display: inline;
-}
-
-.picture-subtitle {
-  font-size: 3rem;
-}
-
 #toast {
   position: fixed;
   top: 60px;
@@ -45,6 +31,27 @@ $header-family:Baumans;
   margin-right: 10px;
 }
 
+.guide-container {
+  padding: 0rem 1.5rem;
+}
+
+.guide-top-padding { 
+  padding-top: 3rem;
+}
+
+.picture-title {
+  font-size: 120px;
+  text-shadow:
+    -2px -2px 0 #22D0B2,
+    2px -2px 0 #22D0B2,
+    -2px 2px 0 #22D0B2,
+    2px 2px 0 #22D0B2;
+  display: inline;
+}
+
+.picture-subtitle {
+  font-size: 3rem;
+}
 
 @media (max-width: 768px) { /* Mobile devices */
   .picture-title {

@@ -1,80 +1,75 @@
-<section class="section">
-  
-  <div class="container">
-    <div class="columns">
-      <div class="column is-6">
-        <h1 class="title is-1 has-text-primary">Guides</h1>
-      </div>
-      <div class="column">
+<div class="guide-container guide-top-padding container">
+  <div class="columns">
+    <div class="column is-6">
+      <h1 class="title is-1 has-text-primary">Guides</h1>
+    </div>
+    <div class="column">
 
-        <%= if @current_user do %>
-          <div>
-            <%= case @current_user.role do
-              "admin" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
-              "editor" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
-              _ -> ""
-              end %>
-          </div>
-        <% end %> 
+      <%= if @current_user do %>
+        <div>
+          <%= case @current_user.role do
+            "admin" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
+            "editor" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
+            _ -> ""
+            end %>
+        </div>
+      <% end %> 
 
-      </div>
     </div>
   </div>
-</section>
+</div>
 
 
+<div class="guide-container container">
+  <%= for category <- @categories do %>
+    <br>
+    <h1 class="title is-2 has-text-primary"><%= category.name %></h1>
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical">
+        <div class="tile">
 
-<section>
-  <div class="container">
-    <%= for category <- @categories do %>
-      <br>
-      <h1 class="title is-2 has-text-primary"><%= category.name %></h1>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical">
-          <div class="tile">
-
-            <%= for guide <- @guides do %>
-              <%= if guide.category.name == category.name do %>
-                <div class="tile is-parent is-vertical">
-                  <article class="tile is-child notification is-light">
+          <%= for guide <- @guides do %>
+            <%= if guide.category.name == category.name do %>
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-light">
+                  <a href="/guides/<%= guide.id %>">
+                    <h1 class="title is-4"><%= guide.name %></h1>
+                  </a>
+                  <br>
+                  <figure class="image is-2by1">
                     <a href="/guides/<%= guide.id %>">
-                      <h1 class="title is-4"><%= guide.name %></h1>
+                      <img src="<%= guide.image_url %>" alt="Placeholder image">
                     </a>
-                    <br>
-                    <figure class="image is-2by1">
-                      <a href="/guides/<%= guide.id %>">
-                        <img src="<%= guide.image_url %>" alt="Placeholder image">
-                      </a>
-                    </figure>
-                    <br>
+                  </figure>
+                  <br>
 
-                    <%= if @current_user do %>
-                      <span>
-                        <%= case @current_user.role do
-                          "admin" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
-                          "editor" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
-                          _ -> ""
-                          end %>
-                      </span>
-                      <span>
-                        <%= case @current_user.role do
-                          "admin" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
-                          "editor" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
-                          _ -> ""
-                          end %>
-                      </span>
-                    <% end %> 
+                  <%= if @current_user do %>
+                    <span>
+                      <%= case @current_user.role do
+                        "admin" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
+                        "editor" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
+                        _ -> ""
+                        end %>
+                    </span>
+                    <span>
+                      <%= case @current_user.role do
+                        "admin" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
+                        "editor" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
+                        _ -> ""
+                        end %>
+                    </span>
+                  <% end %> 
 
-                  </article>
-                </div>
-              <% end %> 
-            <% end %>
-          </div>
-        </div>      
-      </div>
-    <% end  %>
-  </div>
-</section>
+                </article>
+              </div>
+            <% end %> 
+          <% end %>
+        </div>
+      </div>      
+    </div>
+  <% end  %>
+</div>
+
 
 
 
