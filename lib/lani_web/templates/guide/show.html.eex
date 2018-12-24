@@ -21,6 +21,7 @@
         <div class="tile is-parent is-vertical">
           <article class="tile is-child notification is-info">
             <p class="title">Guide</p>
+            <p class="subtitle guide-description">click the top left button to see every step, and click the top right button to open in Google maps!</p>
                 <iframe src="<%= @guide.map_link %>" width="100%" height="480"></iframe>
           </article>
         </div>
